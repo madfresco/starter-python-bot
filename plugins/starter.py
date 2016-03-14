@@ -25,7 +25,7 @@ p_bot_help = re.compile("pybot[\s]*help")
 def process_message(data):
     logging.debug("process_message:data: {}".format(data))
 
-    if p_bot_hi in data['text']:
+    if p_bot_hi.match(['text']):
         outputs.append([data['channel'], "{}".format(random.choice(greetings))])
 
     elif p_bot_joke.match(data['text']):
